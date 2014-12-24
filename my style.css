@@ -1,0 +1,29 @@
+body {
+	overflow: hidden
+}
+
+.btn-sm {
+	background-color: white;
+	border-color: white;
+	color: #333;
+}
+
+.btn-sm:hover{
+	background-color: white;
+	border-color: white;
+	text-decoration: underline;
+	color:#00F;
+}
+
+.btn-sm:active{
+	background-color: white;
+	border-color: white;
+	text-decoration: underline;
+	color:#333;
+}
+
+.btn-sm:visited{
+	background-color: white;
+	border-color: grey;
+	color:#333;
+}
