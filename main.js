@@ -116,9 +116,9 @@ $(function(){
 		$(event.target).parent().parent().parent().remove();
 	});
 
-	//COMPLETED can sort the lists
+	/*COMPLETED can sort the lists
 	$("#myLists").sortable();
-	$("#myLists").disableSelection();
+	$("#myLists").disableSelection();*/
 	//COMPLETED can sort the items
 	$(".tab-pane").sortable();
 	$(".tab-pane").disableSelection();
