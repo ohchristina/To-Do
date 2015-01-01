@@ -7,14 +7,19 @@ $(function(){
 		console.log("I have been clicked");
 		var value = $(".form-control").val();
 		console.log(value);
+		if (value == " ") {
+			return;
+		} else if (value == "") {
+			return;
+		};
 		var newList = document.createElement("LI");
 		newList.setAttribute("role", "presentation");
 		newList.setAttribute("data-target", "pill");
 		$(newList).html("<a href = '#'>" + value + "</a>");
 		document.getElementById("myLists").appendChild(newList);
-		console.log($(".form-control").val());
 		$("#sidebar .form-control").val('');
 		$("#sidebar .form-control").attr("placeholder", "Add A List");
+
 		//var last = document.getElementById("myLists");
 		//document.getElementById("myLists").insertBefore(newList, last.childNodes[last.childNodes.length-2]);
 
