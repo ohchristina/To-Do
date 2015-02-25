@@ -15,6 +15,7 @@ $(function(){
 		var newList = document.createElement("LI");
 		newList.setAttribute("role", "presentation");
 		newList.setAttribute("data-target", "pill");
+		newList.setAttribute("class", "class" + number);
 		$(newList).html("<a href = '#'>" + value + "</a>");
 		document.getElementById("myLists").appendChild(newList);
 		$("#sidebar .form-control").val('');
@@ -109,7 +110,19 @@ $(function(){
 			$(event.target).parent().next().prop("readonly", false);
 		}
 	});
-
+/*
+	if ($(event.target).is(":checked")) {
+		$(document).on("click", ".chkbx", function(event){
+			if ($(event.target).not(":checked")) {
+				$(event.target).parent().next().prop("readonly", false);
+				n = n - 1;
+				$(".page-header").html("<h1> To Do List <small>" + n + " items completed</small><h1>");
+			} else {
+				$(event.target).parent().next().prop("readonly", true);
+			};
+		});
+	};
+*/
 	//COMPLETED da trash
 	$(document).on("click", ".trash", function(event){
 		console.log("trash");
@@ -139,7 +152,9 @@ $(function(){
 	$(document).on("click", "#delete", function(event){
 		var deleted = $(".list-group .active").text();
 		var position = $(".list-group .active").index();
-		$("#myLists li").remove("li:contains(" + deleted + ")");
+		console.log(position);
+		$("#myLists li").filter(function() {
+			return $.text([this]) === deleted; }).remove();
 		$(".list-group .active").remove();
 		$("#id"+ position).remove();
 		if (position > 0) {
